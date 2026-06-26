@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a defect (per SiiYa Testing & Bug-Tracking standard)
+title: "[Bug]: "
+labels: ["bug", "needs-red-test"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Per `ai-operating-system/standards/TESTING_AND_BUG_TRACKING.md`.
+        A reproducing RED test is added before the fix. The **tester (QA) closes
+        this ticket** after verification — the fixer never closes their own ticket.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened (expected vs. actual)
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps / evidence (queries, file:line)
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "sev1 (blocker / production)"
+        - "sev2 (major)"
+        - "sev3 (minor)"
+    validations:
+      required: true
+  - type: input
+    id: area
+    attributes:
+      label: Affected repo / area
